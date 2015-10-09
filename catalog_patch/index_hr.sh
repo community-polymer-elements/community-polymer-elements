@@ -1,21 +1,14 @@
-if grep -n isMol app/elements/pages/page-packages.html; then
+if grep -n isCustom app/elements/pages/page-packages.html; then
     echo 'hr - patched'
 else
     echo 'hr - patching app/elements/pages/page-packages.html'
-    # add <hr /> between packages
-    # sed -i 's#</package-tile></a>#</package-tile></a>\n            <template is="dom-if" if="{{_isMol(item.name)}}"><hr style="color: black; width: 100%;" themed-reverse="" /></template>#' app/elements/pages/page-packages.html
-    # <a href$="[[_packageLink(item.name)]]" is="app-link" class="package flex-none"><package-tile name$="[[item.name]]"></package-tile></a>
+    printf `grep -n 'package-tile>' app/elements/pages/page-packages.html | awk -F: '{print($1)}'` > n
 
-# <a href$="[[_packageLink(item.name)]]" is="app-link" class="package flex-none"><package-tile name$="[[item.name]]"></package-tile></a>
-
-    # sed -e '/<\/package-tile><\/a>/ {' -e 'r index_hr_style' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-    # sed -e '/packages]]">/ {' -e 'r index_hr_style2' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-    # sed -e '/guides-container">/ {' -e 'r index_hr_style3' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-
-    sed -e '/packages layout horizontal wrap/ {' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-    sed -e '/packages]]">/ {' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-    sed -e '/package-tile>/ {' -e 'r page-packages.patch' -e 'd' -e '}' -i app/elements/pages/page-packages.html
-    # sed -i 's#_packageLink: function(name)#_isMol: function(name) { if (name==="community-polymer-elements") { return true; } else { return false; } },\n    _packageLink: function(name)#' app/elements/pages/page-packages.html
+    # remove some lines near package-tile el
+    N=`cat n`; sed "$((${N}-2)),$((${N}+2))d;" -i app/elements/pages/page-packages.html
+    # replace
+    sed -e '/<div class="content fit">/ {' -e 'r page-packages.patch' -e 'd' -e '}' -i app/elements/pages/page-packages.html
     sed -i 's#_packageLink: function(name)#    _isCustom: function(custom) { if (custom=="true") { return true; } else { return false; } },\n    _isCustomOff: function(custom) { if (custom) { return false; } else { return true; } },\n    _packageLink: function(name)#' app/elements/pages/page-packages.html
-
+    rm n
 fi
+

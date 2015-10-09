@@ -1,4 +1,4 @@
-
+    <div class="content fit">
         <div class="packages layout horizontal wrap">
           <hr style="color: black; width: 100%;" themed-reverse="" />
           <h2 style="color: white;">Community Elements</h2>
@@ -23,7 +23,7 @@
 
         <div class="packages layout horizontal wrap">
           <hr style="color: black; width: 100%;" themed-reverse="" />
-          <h3 class="color:white;">Useful Links</h3>
+          <h3 style="color:white;">Useful Links</h3>
           <hr style="color: black; width: 100%;" themed-reverse="" />
           <a href="https://www.materialpalette.com/" class="package flex-none"><package-tile package='{ "version": "material", "symbol": "Mp", "title": "Material Palette", "tagline": "Color Picker", "color": "#FFECB3" }'></package-tile></a>
 
@@ -35,3 +35,4 @@
           </a>
           <hr style="color: black; width: 100%;" themed-reverse="" />
         </div>
+
