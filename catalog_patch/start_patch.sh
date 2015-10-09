@@ -1,6 +1,6 @@
 bower install --save 'https://github.com/mibamur/disqus-comments.git#master'
-bower install --save 'https://github.com/marcus7777/development.git#master'
-bower install --save 'https://github.com/marcus7777/utilities.git#master'
+#bower install --save 'https://github.com/marcus7777/development.git#master'
+#bower install --save 'https://github.com/marcus7777/utilities.git#master'
 bower install --save 'https://github.com/marcus7777/edit-in-jsbin.git#master'
 bower install --save 'https://github.com/community-polymer-elements/polymer-third-party.git#master'
 
