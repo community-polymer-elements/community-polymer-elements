@@ -1,7 +1,8 @@
 {
+	"custom": "true",
 	"name": "polymer-third-party",
 	"title": "Community Wrappers",
-	"color": "#64B5F6",
+	"color": "#FF5722",
 	"symbol": "Wr",
 	"tagline": "Community wrappers for third-party libraries"
 }

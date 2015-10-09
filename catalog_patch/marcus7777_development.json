@@ -1,7 +1,8 @@
 {
+	"custom": "true",
 	"name":"development",
 	"title":"Development",
-	"color":"#cfd8dc",
+	"color":"#64B5F6",
 	"symbol":"< />",
 	"tagline":"Development from marcus7777 repo"
 }

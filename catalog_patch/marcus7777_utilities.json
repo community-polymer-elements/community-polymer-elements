@@ -1,7 +1,8 @@
 {
-	"name":"utilities",
+	"custom": "true",
+	"name":"Utilities",
 	"title":"Utilities",
-	"color":"#7D26CD",
+	"color":"#1976D2",
 	"symbol":"Ut",
 	"tagline":"Utilities from marcus7777 repo"
 }
