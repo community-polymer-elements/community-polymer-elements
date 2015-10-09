@@ -6,7 +6,7 @@ if [ "$YESNO" = "y" ] ; then
 	echo "Enter code (exaple UA-39334307-10)";
 	read NEWGA
 	OLDGA="UA-39334307-10"
-	# NEWGA="UA-39334307-10"
+	# NEWGA="UA-68624418-1"
 	sed -i "s/$OLDGA/$NEWGA/" app/index.html
 else
 	echo "Removing Google Analitics";
