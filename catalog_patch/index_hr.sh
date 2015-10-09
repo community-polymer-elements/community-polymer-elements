@@ -11,6 +11,9 @@ else
     # sed -e '/<\/package-tile><\/a>/ {' -e 'r index_hr_style' -e 'd' -e '}' -i app/elements/pages/page-packages.html
     # sed -e '/packages]]">/ {' -e 'r index_hr_style2' -e 'd' -e '}' -i app/elements/pages/page-packages.html
     # sed -e '/guides-container">/ {' -e 'r index_hr_style3' -e 'd' -e '}' -i app/elements/pages/page-packages.html
+
+    sed -e '/packages layout horizontal wrap/ {' -e 'd' -e '}' -i app/elements/pages/page-packages.html
+    sed -e '/packages]]">/ {' -e 'd' -e '}' -i app/elements/pages/page-packages.html
     sed -e '/package-tile>/ {' -e 'r page-packages.patch' -e 'd' -e '}' -i app/elements/pages/page-packages.html
     # sed -i 's#_packageLink: function(name)#_isMol: function(name) { if (name==="community-polymer-elements") { return true; } else { return false; } },\n    _packageLink: function(name)#' app/elements/pages/page-packages.html
     sed -i 's#_packageLink: function(name)#_isMol: function(name) { if (name=="community-polymer-elements") { return true; } else { return false; } },\n    _isCustom: function(custom) { if (custom=="true") { return true; } else { return false; } },\n    _isCustomOff: function(custom) { if (custom) { return false; } else { return true; } },\n    _packageLink: function(name)#' app/elements/pages/page-packages.html
