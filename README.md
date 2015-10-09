@@ -27,7 +27,13 @@ gulp serve
  - [x] Disqus
  - [x] Logo
  - [x] index.html ReDesign
- - [x] community components (populate catalog.json <- add.json)
+ - [x] community components - populate catalog.json <-- 
+```
+community-polymer-elements.json
+marcus7777_development.json
+marcus7777_utilities.json
+polymer-third-party.json
+```
  - [ ] Test
  - [ ] JSBin
  - [ ] Writing new guides, blogs, Articles
